@@ -1,0 +1,100 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a sample API server.  See source code in [Python Microservices](https://github.com/python-microservices/microservices-scaffold)"
+  version: "1.0.0"
+  title: "API of Payments"
+  termsOfService: "https://github.com/python-microservices/microservices-scaffold/"
+  contact:
+    email: "a.vara.1986@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+tags:
+- name: "Payment"
+  description: "Everything about your payments"
+  externalDocs:
+    description: "Find out more"
+    url: "https://github.com/python-microservices/microservices-scaffold"
+schemes:
+- "http"
+paths:
+  /payment:
+    post:
+      tags:
+      - "Payment"
+      summary: "Example endpoint return payment status"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "payment"
+        description: "Data of the payment"
+        required: true
+        schema:
+          $ref: "#/definitions/Payment"
+      responses:
+        "200":
+          description: "The payment status"
+          schema:
+            $ref: '#/definitions/PaymentReturn'
+        "405":
+          description: "Invalid input"
+    put:
+      tags:
+      - "Payment"
+      summary: "Example endpoint update payment status"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "paymentUpdate"
+        description: "Data of the payment updation"
+        required: true
+        schema:
+          $ref: "#/definitions/PaymentUpdate"
+      responses:
+        "200":
+          description: "The payment status"
+          schema:
+            $ref: '#/definitions/PaymentReturn'
+        "405":
+          description: "Invalid input"
+definitions:
+      Payment:
+        type: "object"
+        properties:
+          id:
+            type: "integer"
+          orderId:
+            type: "integer"
+          amount:
+            type: "integer"
+          status:
+            type: "string"
+      PaymentReturn:
+        type: "object"
+        properties:
+          orderId:
+            type: "integer"
+          paymentId:
+            type: "integer"
+          status:
+            type: "string"
+          success:
+            type: "boolean"
+      PaymentUpdate:
+        type: "object"
+        properties:
+          id:
+            type: "integer"
+          stat:
+            type: "integer"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "https://github.com/python-microservices/microservices-scaffold"

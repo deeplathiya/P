@@ -1,0 +1,10 @@
+AUTHORS
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+MS_Scaffold.egg-info/PKG-INFO
+MS_Scaffold.egg-info/SOURCES.txt
+MS_Scaffold.egg-info/dependency_links.txt
+MS_Scaffold.egg-info/top_level.txt
